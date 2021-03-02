@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
-import { AddCategori } from './components/AddCategori';
+import { AddCategory } from './components/AddCategory';
 
 export const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['Mustang', 'BMW', 'Ferrari']);
+    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
 
     return (
         <>
             <h2>GifExpertApp</h2>
-            <AddCategori setCategories={ setCategories } />
+            <AddCategory setCategories={setCategories} />
             <hr />
+
             <ol>
                 {
-                    categories.map(categori => {
-                        return <li key={categori}> {categori} </li>
+                    categories.map(category => {
+                        return <li key={category}> {category} </li>
                     })
                 }
             </ol>
         </>
     )
 }
+
+
+
 
