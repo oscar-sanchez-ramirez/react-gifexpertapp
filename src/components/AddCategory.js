@@ -14,7 +14,7 @@ export const AddCategory = ({ setCategories }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim().length > 2) {
-            setCategories(cats => [...cats, inputValue]);
+            setCategories(cats => [ inputValue, ...cats]);
             setinputValue('')
         }
     };
@@ -22,9 +22,10 @@ export const AddCategory = ({ setCategories }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Add Category</h2>
             <input
+                className="form-control bg-light animate__animated animate__bounceIn animate__delay-1s"
                 type="text"
+                placeholder="Buscar..."
                 value={inputValue}
                 onChange={handleInputChange}
             />
